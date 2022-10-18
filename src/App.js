@@ -6,8 +6,8 @@ import Nav from './components/Nav';
 
 import Home from './pages/Home';
 import About from './pages/About';
-import NotFound from './pages/NotFound';
 import FAQ from './pages/FAQ';
+import NotFound from './pages/NotFound';
 
 import './App.css';
 
