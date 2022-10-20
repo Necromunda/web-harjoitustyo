@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div className="text-center">
+    <div id="about-page" className="text-center">
       <div className="">
         <h1>About Us Page</h1>
         <p>Website created by Johannes Rantapää as a final assignment for the web-devlopment course.</p>

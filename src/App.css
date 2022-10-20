@@ -42,6 +42,7 @@ ul {
 
 #main {
   min-height:100%;
+  padding-bottom: 95px;
 }
 
 footer {
@@ -65,4 +66,8 @@ footer > div {
   background-repeat: no-repeat;
   background-position: -50;
   height: 333px;
+}
+
+#about-page {
+  padding-bottom: 95px;
 }
