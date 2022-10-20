@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Showcase({ drinks }) {
   return (
-    <div className="row d-flex justify-content-between">
+    <div id="cards" className="row d-flex justify-content-between">
       {drinks.map(drink => (
         <div className="card border-dark">
           <div class="card-header border-bottom border-dark text-center h5 bg-white">{drink.name}</div>

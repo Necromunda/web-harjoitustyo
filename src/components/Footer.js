@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className="container-fluid fixed-bottom">
-      <footer className="py-3 my-3 border-top border-dark">
-        <p className="text-center">© Johannes Rantapää</p>
-      </footer>
-    </div>
+    <footer className="footer">
+      <div className="container py-3 my-3 border-top border-dark text-center">
+        <p>© Johannes Rantapää</p>
+      </div>
+    </footer>
   )
 }
