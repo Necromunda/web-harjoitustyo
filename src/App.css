@@ -37,6 +37,7 @@ html, body {
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 #main {
@@ -56,4 +57,12 @@ footer > div {
 
 #cards {
   padding-bottom: 95px;
+}
+
+#profile-picture {
+  background-image: url(./pics/profile_picture.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -50;
+  height: 333px;
 }

@@ -16,7 +16,7 @@ function App() {
     <div>
       <Nav />
       <Header />
-      <div id="main" className="container border border-primary">
+      <div id="main" className="container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

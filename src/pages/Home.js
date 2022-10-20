@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
@@ -7,19 +7,28 @@ import Showcase from '../components/Showcase'
 export default function Home() {
   const [input, setInput] = useState('')
   const [drinks, setDrinks] = useState([])
+  const [ingredientList, setIngredientList] = useState([])
 
   const baseURL = 'https://www.thecocktaildb.com/api/json/v1/1/'
+  const ingrURL = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 
-  // const getDrinks = (e) => {
-  //   e.preventDefault()
-  //   const URL = input === '' ? baseURL + 'random.php' : baseURL + 'search.php?s=' + input
-  //   axios.get(URL)
-  //     .then(response => {
-  //       setDrinks(response.data.drinks)
-  //     }).catch(error => {
-  //       alert(error)
-  //     })
-  // }
+  // useEffect(() => {
+  //   let arr = []
+  //   axios.get(ingrURL)
+  //   .then(response => {
+  //     response.data.drinks.forEach(data => {
+  //       const ingredients = Object.keys(data)
+  //         .filter(key => key.match(/ingredient/i))
+  //         .filter(key => !!data[key] || data[key] === ' ')
+  //         .map(key => data[key].trim())
+  //         arr.push(ingredients[0])
+  //       })
+  //       setIngredientList(arr)
+  //       console.log(ingredientList);
+  //   }).catch(error => {
+  //     console.log(error);
+  //   })
+  // }, [])
 
   const getDrinks = (e) => {
     e.preventDefault()
@@ -57,11 +66,6 @@ export default function Home() {
           arr.push(cocktail)
         });
         setDrinks(arr)
-        console.log(drinks);
-        // console.log(drinks[0].ingredients);
-        // drinks[0].ingredients.forEach(element => {
-        //   console.log(element);
-        // });
       }).catch(error => {
         alert(error)
       })
@@ -71,6 +75,11 @@ export default function Home() {
     <div>
       <form onSubmit={getDrinks} className="form-inline d-flex justify-content-center mb-3">
         <div className="input-group w-50">
+          {/* <button type="button" className="btn btn-outline-dark input-group-prepend">Filters</button> */}
+          {/* <input type="radio" className="btn-check" name="options" id="option1" autocomplete="off" checked/>
+          <label class="btn btn-outline-dark input-group-prepend" for="option1">Alcoholic</label>
+          <input type="radio" className="btn-check" name="options" id="option2" autocomplete="off"/>
+          <label class="btn btn-outline-dark input-group-prepend" for="option2">Non-alcoholic</label> */}
           <input type="text" className="form-control outline-dark" placeholder="Search..." onChange={e => setInput(e.target.value)} />
           <button className="btn btn-outline-dark input-group-append"><FontAwesomeIcon icon={faSearch} className="px-3" /></button>
         </div>
