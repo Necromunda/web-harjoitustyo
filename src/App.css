@@ -56,18 +56,10 @@ footer > div {
   background-color: #fff;
 }
 
-#cards {
+/* #cards {
   padding-bottom: 95px;
-}
+} */
 
-#profile-picture {
-  background-image: url(./pics/profile_picture.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: -50;
-  height: 333px;
-}
-
-#about-page {
+/* #about-page {
   padding-bottom: 95px;
-}
+} */

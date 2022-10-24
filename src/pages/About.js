@@ -10,7 +10,7 @@ export default function About() {
       <h2>Our Team</h2>
       <div className="row d-flex justify-content-center">
         <div className="card border border-dark">
-          <span id="profile-picture" className="my-1"></span>
+          <img src={require("../pics/profile_picture.jpg")} className="my-1" alt="creator" />
           <div className="container">
             <h2>Johannes Rantapää</h2>
             <p className="title">Creator</p>
