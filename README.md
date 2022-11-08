@@ -6,8 +6,10 @@
 
 #### 1. Clone the repository
 
-#### 2. run ´npm i´ in project root
+#### 2. run ´cd web-harjoitustyo´
 
-#### 3. run ´npm start´
+#### 3. run ´npm i´ in project root
 
-#### 4. Go to [localhost:8080](https://localhost:8080) and you're all set!
+#### 4. run ´npm start´
+
+#### 5. Go to [localhost:8080](https://localhost:8080) and you're all set!
