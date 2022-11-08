@@ -35,37 +35,40 @@ export default function Home() {
     const URL = input === '' ? baseURL + 'random.php' : baseURL + 'search.php?s=' + input
     axios.get(URL)
       .then(response => {
-        let arr = []
-
-        // console.log(response.data.drinks);
-        response.data.drinks.forEach(data => {
-          const drinks = Object.keys(data)
-            .filter(key => key.match(/ingredient/i))
-            .filter(key => !!data[key] || data[key] === ' ')
-            .map(key => data[key].trim())
-
-          const measures = Object.keys(data)
-            .filter(key => key.match(/measure/i))
-            .filter(key => !!data[key] || data[key] === ' ')
-            .map(key => data[key].trim())
-
-          const ingredients = drinks.map((drink, index) => {
-            return { ingr: drinks[index], measure: measures[index] }
-          })
-
-          const cocktail = {
-            image: data.strDrinkThumb,
-            name: data.strDrink,
-            instructions: data.strInstructions,
-            glass: data.strGlass,
-            alcoholic: data.strAlcoholic,
-            category: data.strCategory,
-            id: data.idDrink,
-            ingredients
-          }
-          arr.push(cocktail)
-        });
-        setDrinks(arr)
+        console.log(response);
+        if (response.data.drinks != null) {
+          let arr = []
+  
+          // console.log(response.data.drinks);
+          response.data.drinks.forEach(data => {
+            const drinks = Object.keys(data)
+              .filter(key => key.match(/ingredient/i))
+              .filter(key => !!data[key] || data[key] === ' ')
+              .map(key => data[key].trim())
+  
+            const measures = Object.keys(data)
+              .filter(key => key.match(/measure/i))
+              .filter(key => !!data[key] || data[key] === ' ')
+              .map(key => data[key].trim())
+  
+            const ingredients = drinks.map((drink, index) => {
+              return { ingr: drinks[index], measure: measures[index] }
+            })
+  
+            const cocktail = {
+              image: data.strDrinkThumb,
+              name: data.strDrink,
+              instructions: data.strInstructions,
+              glass: data.strGlass,
+              alcoholic: data.strAlcoholic,
+              category: data.strCategory,
+              id: data.idDrink,
+              ingredients
+            }
+            arr.push(cocktail)
+          });
+          setDrinks(arr)
+        } else { alert("No matches") }
       }).catch(error => {
         alert(error)
       })
